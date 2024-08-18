@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Online Quiz Maker</title>
+    <link rel="stylesheet" href="quiz.css">
+</head>
+<body>
+    <div class="container">
+        <h1>Online Quiz Maker</h1>
+        
+        <!-- Home Page Section -->
+        <div id="home-page">
+            <button onclick="showCreateQuiz()">Create a Quiz</button>
+            <button onclick="showQuizList()">Take a Quiz</button>
+        </div>
+
+        <!-- Quiz Creation Section -->
+        <div id="create-quiz" class="hidden">
+            <h2>Create a Quiz</h2>
+            <form id="quizForm">
+                <input type="text" id="quiz-title" placeholder="Quiz Title" required>
+                <div id="questions-container">
+                    <div class="question-block">
+                        <input type="text" placeholder="Question 1" required>
+                        <input type="text" placeholder="Option A" required>
+                        <input type="text" placeholder="Option B" required>
+                        <input type="text" placeholder="Option C" required>
+                        <input type="text" placeholder="Option D" required>
+                        <input type="text" placeholder="Correct Answer" required>
+                    </div>
+                </div>
+                <button type="button" onclick="addQuestion()">Add Another Question</button>
+                <button type="submit">Create Quiz</button>
+            </form>
+        </div>
+
+        <!-- Quiz List Section -->
+        <div id="quiz-list" class="hidden">
+            <h2>Available Quizzes</h2>
+            <ul id="quizList"></ul>
+        </div>
+
+        <!-- Quiz Taking Section -->
+        <div id="take-quiz" class="hidden">
+            <h2 id="quizTitle"></h2>
+            <div id="question-container"></div>
+            <button onclick="submitQuiz()">Submit Quiz</button>
+        </div>
+
+        <!-- Quiz Results Section -->
+        <div id="quiz-results" class="hidden">
+            <h2>Your Results</h2>
+            <p id="quizScore"></p>
+            <button onclick="goHome()">Go Home</button>
+        </div>
+    </div>
+
+    <script src="quiz.js"></script>
+</body>
+</html>
